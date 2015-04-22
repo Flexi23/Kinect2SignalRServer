@@ -1,0 +1,35 @@
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\SignalRSelfHost.exe.config
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\SignalRSelfHost.exe
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\SignalRSelfHost.pdb
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.Cors.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.Diagnostics.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.Hosting.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.Security.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Newtonsoft.Json.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Owin.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\System.Web.Cors.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.xml
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.Cors.xml
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.Diagnostics.xml
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.Hosting.xml
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.Security.xml
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Newtonsoft.Json.xml
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\obj\Debug\SignalRSelfHost.csprojResolveAssemblyReference.cache
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\obj\Debug\SignalRSelfHost.exe
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\obj\Debug\SignalRSelfHost.pdb
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.FileSystems.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.StaticFiles.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.FileSystems.xml
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Owin.StaticFiles.xml
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Kinect.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.Kinect.xml
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\tmp\SignalR Self-Host Sample\C#\SignalRSelfHost\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\playground\GitHub\Kinect2SignalRServer\SignalRSelfHost\bin\Debug\SignalRSelfHost.exe.config
+C:\playground\GitHub\Kinect2SignalRServer\SignalRSelfHost\obj\Debug\SignalRSelfHost.exe
+C:\playground\GitHub\Kinect2SignalRServer\SignalRSelfHost\obj\Debug\SignalRSelfHost.pdb
