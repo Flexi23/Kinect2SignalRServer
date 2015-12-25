@@ -25,6 +25,7 @@ namespace SignalRSelfHost
 	class Program
 	{
 		static private string url = "http://localhost:8080";
+		//static private string url = "http://192.168.0.104:8080";
 		static private KinectSensor kinectSensor = null;
 		static private CoordinateMapper coordinateMapper = null;
 		static private BodyFrameReader bodyFrameReader = null;
@@ -32,12 +33,17 @@ namespace SignalRSelfHost
 
 		private const float InferredZPositionClamp = 0.1f;
 
+		static private Face faceTracker = null;
+		static private SanfordMidiTracker midi = null;
+
 		static void Main(string[] args)
 		{
 			kinectSensor = KinectSensor.GetDefault();
 			coordinateMapper = kinectSensor.CoordinateMapper;
 			bodyFrameReader = kinectSensor.BodyFrameSource.OpenReader();
 			kinectSensor.IsAvailableChanged += Sensor_IsAvailableChanged;
+			faceTracker = new Face(kinectSensor, bodyFrameReader);
+			faceTracker.AsJSON += faceJSON;
 
 			Console.WriteLine("Open Kinect");
 
@@ -54,6 +60,17 @@ namespace SignalRSelfHost
 
 				ConnectKinectClient();
 
+				midi = new SanfordMidiTracker();
+				midi.ChannelMsg += midi_ChannelMsg;
+				try
+				{
+					midi.StartListening();
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine("Midi Device: " + ex.Message);
+				}
+
 				Console.WriteLine("Press [Enter] to stop the server.");
 				Console.ReadLine();
 
@@ -67,6 +84,54 @@ namespace SignalRSelfHost
 				{
 					kinectSensor.Close();
 					kinectSensor = null;
+				}
+
+			}
+		}
+
+		static void faceJSON(string verticesJSON, string status, ulong TrackingId)
+		{
+			Console.WriteLine("face vertex json string length: " + verticesJSON.Length + " (" + status + ")");
+			kinectHubProxy.Invoke("OnFace", verticesJSON, status, TrackingId);
+		}
+
+		static Dictionary<string, string> midiState = new Dictionary<string, string>();
+
+		static void midi_ChannelMsg(string cmd, string channel, string key, string value)
+		{
+			if (cmd.Equals("Controller"))
+			{
+				if (midiState.ContainsKey(key))
+				{
+					midiState[key] = value;
+				}
+				else
+				{
+					midiState.Add(key, value);
+				}
+
+				try
+				{
+					if (key == "46" && value == "127")
+					{
+						Console.WriteLine("send all key value pairs");
+						foreach (string k in midiState.Keys)
+						{
+							kinectHubProxy.Invoke("OnMidi", channel, k, midiState[k]);
+							Console.WriteLine(String.Format("Midi channel {0}: {1} => {2}", channel, k, midiState[k]));
+						}
+					}
+					else
+					{
+						kinectHubProxy.Invoke("OnMidi", channel, key, value);
+						Console.WriteLine(String.Format("Midi channel {0}: {1} => {2}", channel, key, value));
+					}
+				}
+				catch (Exception x)
+				{
+					Console.WriteLine(x.GetType().Name + ": " + x.Message);
+					Console.WriteLine("reconnect");
+					ConnectKinectClient();
 				}
 			}
 		}
@@ -181,5 +246,16 @@ namespace SignalRSelfHost
 		{
 			Clients.All.onBodies(trackedBodyTrackingIdsJson, frame);
 		}
+
+		public void OnMidi(string channel, string data1, string data2)
+		{
+			Clients.All.onMidi(channel, data1, data2);
+		}
+
+		public void OnFace(string verticesJSON, string status, ulong TrackingId)
+		{
+			Clients.All.onFace(verticesJSON, status, TrackingId);
+		}
+
 	}
 }
